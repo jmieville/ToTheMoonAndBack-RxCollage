@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     
     private let bag = DisposeBag()
     private let images = Variable<[UIImage]>([])
+    private var imageCache = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +44,17 @@ class MainViewController: UIViewController {
         title = photos.count > 0 ? "\(photos.count) photos" : "RxCollage"
     }
     
+    private func updateNavigationIcon() {
+        let icon = imagePreview.image?
+        .scaled(CGSize(width: 22, height: 22))
+        .withRenderingMode(.alwaysOriginal)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: icon, style: .done, target: nil, action: nil)
+    }
+    
     @IBAction func actionClear() {
         images.value = []
+        imageCache = []
     }
     
     @IBAction func actionSave() {
@@ -63,7 +73,30 @@ class MainViewController: UIViewController {
     @IBAction func actionAdd() {
         //images.value.append(UIImage(named: "IMG_1907.jpg")!)
         let photosViewController = storyboard!.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
-        photosViewController.selectedPhotos
+        let newPhotos = photosViewController.selectedPhotos
+            .share()
+        
+        newPhotos
+            .takeWhile{ [weak self] image in
+                return (self?.images.value.count ?? 0) < 6
+            }
+            .filter { (newImage) in
+                return newImage.size.width > newImage.size.height
+            }
+            .filter{ [weak self] newImage -> Bool in
+                let len = UIImagePNGRepresentation(newImage)?.count ?? 0
+                guard self?.imageCache.contains(len) == false else {
+                    return false
+                }
+                self?.imageCache.append(len)
+                return true
+            }
+            .ignoreElements()
+            .subscribe(onCompleted: { [weak self] in
+                self?.updateNavigationIcon()
+            })
+            .addDisposableTo(photosViewController.bag)
+        newPhotos
             .subscribe(onNext: { [weak self] newImage in
                 guard let images = self?.images else { return }
                 images.value.append(newImage)

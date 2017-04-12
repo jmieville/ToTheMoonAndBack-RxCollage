@@ -19,6 +19,7 @@
 		4918301F1E9E6DE800C7284D /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918301E1E9E6DE800C7284D /* PhotosViewController.swift */; };
 		491830211E9E6E0500C7284D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491830201E9E6E0500C7284D /* PhotoCell.swift */; };
 		491830231E9E6E1E00C7284D /* UIAlertViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491830221E9E6E1E00C7284D /* UIAlertViewController+Rx.swift */; };
+		4986E7681E9E93FE005F72AD /* PHPhotoLibrary+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986E7671E9E93FE005F72AD /* PHPhotoLibrary+rx.swift */; };
 		D0CB4A02BD1D63566E17F43E /* Pods_RxCollageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFC9B81A1FA66D6D48CFD9C /* Pods_RxCollageTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		4918301E1E9E6DE800C7284D /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		491830201E9E6E0500C7284D /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		491830221E9E6E1E00C7284D /* UIAlertViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+Rx.swift"; sourceTree = "<group>"; };
+		4986E7671E9E93FE005F72AD /* PHPhotoLibrary+rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+rx.swift"; sourceTree = "<group>"; };
 		4F8614ACD47D0496CD750B04 /* Pods-RxCollage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCollage.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxCollage/Pods-RxCollage.release.xcconfig"; sourceTree = "<group>"; };
 		A15C802CF0AC072501058126 /* Pods_RxCollage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCollage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA42BFB5CC9AC45165B84119 /* Pods-RxCollage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCollage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxCollage/Pods-RxCollage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				4918301E1E9E6DE800C7284D /* PhotosViewController.swift */,
 				491830201E9E6E0500C7284D /* PhotoCell.swift */,
 				491830221E9E6E1E00C7284D /* UIAlertViewController+Rx.swift */,
+				4986E7671E9E93FE005F72AD /* PHPhotoLibrary+rx.swift */,
 			);
 			path = RxCollage;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				4918301D1E9E6D5B00C7284D /* PhotoWriter.swift in Sources */,
 				491830211E9E6E0500C7284D /* PhotoCell.swift in Sources */,
 				491830231E9E6E1E00C7284D /* UIAlertViewController+Rx.swift in Sources */,
+				4986E7681E9E93FE005F72AD /* PHPhotoLibrary+rx.swift in Sources */,
 				4918301F1E9E6DE800C7284D /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
