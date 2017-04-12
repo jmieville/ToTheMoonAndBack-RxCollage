@@ -33,6 +33,7 @@ class PhotosViewController: UICollectionViewController {
     private func errorMessage() {
         alert(title: "No access to Camera Roll",
               text: "You can grant access to RxCollage from the settings app")
+            .take(5.0, scheduler: MainScheduler.instance)
         .subscribe(onDisposed: { [weak self] in
             self?.dismiss(animated: true, completion: nil)
             _ = self?.navigationController?.popViewController(animated: true)
