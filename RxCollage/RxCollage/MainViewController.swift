@@ -72,7 +72,6 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func actionAdd() {
-        //images.value.append(UIImage(named: "IMG_1907.jpg")!)
         let photosViewController = storyboard!.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
         let newPhotos = photosViewController.selectedPhotos
             .share()
